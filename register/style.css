@@ -1,0 +1,43 @@
+body{
+    background-image: url("basketball.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+    flex-direction: column;
+}
+
+.signup{
+    background-color: rgba(122, 122, 122, 0.7);
+    border-radius: 10px;
+    padding: 20px;  
+    margin: auto;
+    width : 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 15px 0 15px;
+}
+.input_field{
+    
+    display: flex;
+    flex-direction: column;
+    height: 45px;
+    width: 87%;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    color: #fff;
+    padding: 0 0 0 42px;
+    background: rgba(248, 242, 242, 0.1);
+
+}
+::placeholder{
+    color: white;
+  opacity: 0.7;
+}
