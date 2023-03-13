@@ -7,7 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="style.css" rel="stylesheet">
 </head>
-<script src="script.js"></script>
+<script type="text/javascript">
+
+ function setVisibility() {
+  var x = document.getElementById("divOne");
+  if (x.style.display === "none") {
+    x.style.display = "flex";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+</script>
 
 <body>
 
@@ -58,23 +69,30 @@
     </div>
     <div class="regButtons">
       
-        <button class="regCheck">회원가입 완료</button>
+        <button class="regCheck" onclick="setVisibility()">회원가입 완료</button>
       
     </div>
-    <div class="overlay" id="divOne">
+    <div class="overlay" id="divOne" style="display: none;">
         <div class="wrapper">
-            <h2>Please fill out the form</h2>
-            <a href="#" class="close">&times;</a>
+            <a href="javascript:setVisibility();" class="close">X</a>
+            <h2 class="popUpHeader">선호하는 지역이랑 시간을 알려주세요!</h2>
             <div class="content">
                 <div class="container">
                     <form>
-                        <label>First Name</label>
-                        <input type="text" placeholder="Your First Name">
-                        <label>Last Name</label>
-                        <input type="text" placeholder="Your Last Name">
-                        <label>Subject</label>
-                        <textarea placeholder="Your Query Here..."></textarea>
-                        <button value="submit">submit</button>
+                        <label>닉네임(별명)<input type="text" class="NickName" placeholder="사용하실 닉네임"></label>
+                        <br>
+                        <button class="getNick">닉네임 중복 확인</button>
+                        <br>
+                        <p> 자신의 지역을 알려주세요!</p>
+                        <button class="seoul">서울시</button> <button class="city">${city}구</button>
+                        <br>
+                        <br>
+                        <p> 선호하는 시간을 알려주세요!</p>
+                         <input type="time" class="prefTime" id="prefTime"><label class="prefTimeLab">부터</label>
+                         <input type="time" class="prefTime2" id="prefTime2"><label class="prefTimeLab">까지</label>
+                        <br>
+                        <div class="getConfirm"></div>
+                        <button class="confirmSign" value="submit">확인</button>
                     </form>
                 </div>
             </div>
