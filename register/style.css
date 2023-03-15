@@ -43,7 +43,7 @@ label {
     width: 600px;
     display: flex;
     flex-direction: column;
-    padding: 40px 15px 0 15px;
+    
 }
 
 .input_field {
@@ -97,6 +97,7 @@ label {
     border: none;
 
 }
+
 
 .overlay {
     position: fixed;
@@ -196,4 +197,20 @@ color: #fff;
     font-size: 20px;
     font-weight: bold;
 }
+select .gender{
+    display: none;
+    font-size: 20px;
+    color: #fff;
+}
 
+.gender{
+    background-color: rgba(122, 122, 122, 0.7);
+    height: 40px;
+      width: 200px; 
+ color: #fff; 
+ font-size: 20px;
+   
+}
+.confirmSignUp{
+    display: flex;
+}
