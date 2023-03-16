@@ -130,7 +130,7 @@ label {
     display: flex;
     max-width: 600px;
     width: 100%;
-    height: 600px;
+    height: 720px;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -209,8 +209,48 @@ select .gender{
       width: 200px; 
  color: #fff; 
  font-size: 20px;
+ border-radius: 30px;
    
 }
 .confirmSignUp{
     display: flex;
 }
+#locations{
+    display: none;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+ 
+
+}
+.location{
+    height: 23px !important;
+    width: 81px !important;
+    background-color: rgba(148, 1, 247, 0.7) !important;
+    color: lightcyan !important;
+    font-size: 5px !important;
+   
+}
+.location button :hover{
+background-color: rgba(4, 219, 58, 0.2) !important;
+}
+.seoul{
+    display: inline-block;
+}
+.showCity{
+    display: inline;
+    width: 200px;
+    height: 30px;
+    background-color: rgba(17, 128, 202, 0.7);
+    font-size: 30px;
+    color: white;
+    
+    border-radius: 25px;  
+}
+.categoryGet{
+    display: flex;
+}
+.categoryButton[data-status2="false"]{
+background-color: red !important;
+}
+

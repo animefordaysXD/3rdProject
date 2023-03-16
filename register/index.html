@@ -8,6 +8,15 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+    //document.getElementById("showCity").textContent="구를 선택해주세요";
+    const buttons = document.querySelectorAll(".location");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", setLoc);
+});
+});
+
 
  function setVisibility() {
   var x = document.getElementById("divOne");
@@ -16,6 +25,39 @@
   } else {
     x.style.display = "none";
   }
+}
+function getCategoryBasket(button){
+    var pressed= this.getAttribute('data-value1');
+    if (pressed === false){
+        pressed = true;
+    }else{
+        pressed = false;
+    }
+}
+function getCategoryBadmin(button){
+    var pressed= false;
+}
+function getCategoryBowl(button){
+    var pressed= false;
+}
+function getCategoryClimb(button){
+    var pressed= false;
+}
+function showCity(){
+    var y = document.getElementById("locations");
+    if (y.style.display === "grid") {
+    y.style.display = "none";
+  } else {
+    y.style.display = "grid";
+  }
+}
+
+
+function setLoc(event) {
+var city = event.target.value +"구";
+document.getElementById("showCity").textContent=city;
+document.getElementById("showCity").style.border="1px solid blue";
+
 }
 
 </script>
@@ -84,8 +126,43 @@
                         <button class="getNick">닉네임 중복 확인</button>
                         <br>
                         <p> 자신의 지역을 알려주세요!</p>
-                        <button class="seoul">서울시</button> <button class="city">${city}구</button>
+                        <button type="button" class="seoul" onclick="showCity()">서울시</button>&emsp;&emsp;<div id="showCity" class="showCity"></div>
+                        <div class="locations" id="locations">
+                           <button type="button"  class="location" value="용산">용산</button>
+                           <button type="button" class="location" value="강남">강남</button>
+                           <button type="button" class="location" value="강동">강동</button>
+                           <button type="button" class="location" value="강북">강북</button>
+                           <button type="button" class="location" value="강서">강서</button>
+                           <button type="button" class="location" value="관악">관악</button>
+                           <button type="button" class="location" value="광진">광진</button>
+                           <button type="button" class="location" value="구로">구로</button>
+                           <button type="button" class="location" value="금천">금천</button>
+                           <button type="button" class="location" value="노원">노원</button>
+                           <button type="button" class="location" value="도봉">도봉</button>
+                           <button type="button" class="location" value="동대문">동대문</button>
+                           <button type="button" class="location" value="동작">동작</button>
+                           <button type="button" class="location" value="마포">마포</button>
+                           <button type="button" class="location" value="서대문">서대문</button>
+                           <button type="button" class="location" value="서초">서초</button>
+                           <button type="button" class="location" value="성동">성동</button>
+                           <button type="button" class="location" value="성북">성북</button>
+                           <button type="button" class="location" value="송파">송파</button>
+                           <button type="button" class="location" value="양천">양천</button>
+                           <button type="button" class="location" value="영등포">영등포</button>
+                           <button type="button" class="location" value="은평">은평</button>
+                           <button type="button" class="location" value="종로">종로</button>
+                           <button type="button" class="location" value="중구">종구</button>
+                           <button type="button" class="location" value="중랑">중랑</button>
+                        </div>
                         <br>
+                        <br>
+                        <div class="categoryGet" id="categoryGet">
+                            <!-- data-value2 is pressed for functions above -->
+                           <button type="button" data-value1="basketball" data-value2="false" id="basketball" class="categoryButton">농구</button> 
+                           <button type="button" value="climbing" id="climbing" data-value2="false" class="categoryButton">클라이밍</button>
+                           <button type="button" value="bowling" id="bowling" data-value2="false" class="categoryButton">볼링</button>
+                           <button type="button" value="badminton" id="badminton" data-value2="false" class="categoryButton">배드민턴</button>                        
+                        </div>
                         <br>
                         <p> 선호하는 시간을 알려주세요!</p>
                          <input type="time" class="prefTime" id="prefTime"><label class="prefTimeLab">부터</label>
