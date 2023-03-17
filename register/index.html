@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" crossorigin="anonymous">
 
 <head>
     <title></title>
@@ -26,29 +27,48 @@ buttons.forEach((button) => {
     x.style.display = "none";
   }
 }
-function getCategoryBasket(button){
-    var pressed= this.getAttribute('data-value1');
-    if (pressed === false){
-        pressed = true;
-    }else{
-        pressed = false;
+function getCategoryBasket(button){  
+    var pressed= button.getAttribute("data-value2");
+    if (pressed == "false"){
+        pressed = "true";
+    }else if(pressed == "true"){
+        pressed = "false";
     }
+    button.setAttribute("data-value2", pressed); 
 }
 function getCategoryBadmin(button){
-    var pressed= false;
+    var pressed= button.getAttribute("data-value2");
+    if (pressed == "false"){
+        pressed = "true";
+    }else if(pressed == "true"){
+        pressed = "false";
+    }
+    button.setAttribute("data-value2", pressed); 
 }
 function getCategoryBowl(button){
-    var pressed= false;
+    var pressed= button.getAttribute("data-value2");
+    if (pressed == "false"){
+        pressed = "true";
+    }else if(pressed == "true"){
+        pressed = "false";
+    }
+    button.setAttribute("data-value2", pressed); 
 }
 function getCategoryClimb(button){
-    var pressed= false;
+    var pressed= button.getAttribute("data-value2");
+    if (pressed == "false"){
+        pressed = "true";
+    }else if(pressed == "true"){
+        pressed = "false";
+    }
+    button.setAttribute("data-value2", pressed); 
 }
 function showCity(){
     var y = document.getElementById("locations");
     if (y.style.display === "grid") {
     y.style.display = "none";
   } else {
-    y.style.display = "grid";
+    y.style.display = "grid";  
   }
 }
 
@@ -63,7 +83,9 @@ document.getElementById("showCity").style.border="1px solid blue";
 </script>
 
 <body>
-
+    <div class="logoHeader">
+        
+    </div>
     <div class="box">
         <div class="signup">
             <div class="signupEmail">
@@ -126,8 +148,12 @@ document.getElementById("showCity").style.border="1px solid blue";
                         <button class="getNick">닉네임 중복 확인</button>
                         <br>
                         <p> 자신의 지역을 알려주세요!</p>
-                        <button type="button" class="seoul" onclick="showCity()">서울시</button>&emsp;&emsp;<div id="showCity" class="showCity"></div>
+                        <button type="button" class="seoul" onclick="showCity()">서울시<i class="fa-solid fa-city" id="seoulCity"></i></button>&emsp;&emsp;<div id="showCity" class="showCity"></div>
+                        <br>
+                        <br>
+                        
                         <div class="locations" id="locations">
+                            
                            <button type="button"  class="location" value="용산">용산</button>
                            <button type="button" class="location" value="강남">강남</button>
                            <button type="button" class="location" value="강동">강동</button>
@@ -158,16 +184,23 @@ document.getElementById("showCity").style.border="1px solid blue";
                         <br>
                         <div class="categoryGet" id="categoryGet">
                             <!-- data-value2 is pressed for functions above -->
-                           <button type="button" data-value1="basketball" data-value2="false" id="basketball" class="categoryButton">농구</button> 
-                           <button type="button" value="climbing" id="climbing" data-value2="false" class="categoryButton">클라이밍</button>
-                           <button type="button" value="bowling" id="bowling" data-value2="false" class="categoryButton">볼링</button>
-                           <button type="button" value="badminton" id="badminton" data-value2="false" class="categoryButton">배드민턴</button>                        
+                           <button type="button" data-value1="basketball" data-value2="false" id="basketball" class="categoryButton" onclick="getCategoryBasket(this)">농구<i class="fa-solid fa-basketball" id="basketballIcon"></i></button> 
+                           <button type="button" value="climbing" id="climbing" data-value2="false" class="categoryButton" onclick="getCategoryBasket(this)">클라이밍 <i class="fa-solid fa-mountain" id="climbingIcon"></i></button>
+                           <button type="button" value="bowling" id="bowling" data-value2="false" class="categoryButton" onclick="getCategoryBasket(this)">볼링 <i class="fa-solid fa-bowling-ball" id="bowlingIcon"></i></button>
+                           <button type="button" value="badminton" id="badminton" data-value2="false" class="categoryButton" onclick="getCategoryBasket(this)">배드민턴 <i class="fa-solid fa-table-tennis" id="badminIcon"></i></button>                        
                         </div>
                         <br>
                         <p> 선호하는 시간을 알려주세요!</p>
                          <input type="time" class="prefTime" id="prefTime"><label class="prefTimeLab">부터</label>
                          <input type="time" class="prefTime2" id="prefTime2"><label class="prefTimeLab">까지</label>
                         <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                       
                         <div class="confirmSignUp">
                             <button class="confirmSign" value="submit">확인</button>
                         </div>

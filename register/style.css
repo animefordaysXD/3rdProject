@@ -6,6 +6,15 @@ body {
     background-attachment: fixed;
     font-family: "Times New Roman", Times, serif;
 }
+.logoHeader{
+    position: relative;
+    top: 0px;
+    right: 50%;
+    width:auto;
+    background-image: url("backHome.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 
 button:hover {
     background-color: rgba(110, 145, 190, 0.5);
@@ -150,6 +159,7 @@ label {
 .confirmSign{
     display: block;
     margin: 0 auto;
+    width: 300px !important;
 }
 .container button {
     display: inline-block;
@@ -214,14 +224,14 @@ select .gender{
 }
 .confirmSignUp{
     display: flex;
+    justify-content: space-around;
 }
 #locations{
     display: none;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
   gap: 10px;
- 
-
+  
 }
 .location{
     height: 23px !important;
@@ -250,7 +260,96 @@ background-color: rgba(4, 219, 58, 0.2) !important;
 .categoryGet{
     display: flex;
 }
-.categoryButton[data-status2="false"]{
-background-color: red !important;
+.categoryButton[data-value2="false"] i{
+ display: none;
+}
+.categoryButton[data-value2="true"]{
+    outline: none;
+    background-color: rgba(110, 145, 190, 0.3) !important;
+box-shadow: inset 0px -1px 5px 2px #0a0a0a; 
+}
+@keyframes jump {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+.categoryButton[data-value2="true"] #basketballIcon{
+    display: inline-block;
+    color: rgb(224, 158, 14);
+    animation: jump 1s ease-in-out;
+}
+@keyframes climb{
+    0%{
+        transform: translateX(0);
+    }
+    33%{
+        transform:translateX(-2px);
+    }
+   66%{
+    transform:translateX(2px);
+    }
+    100%{
+        transform:translateX(0);
+    }
+}
+.categoryButton[data-value2="true"] #climbingIcon{
+    display: inline-block;
+    color: rgba(65, 64, 63, 0.5);
+    animation: climb 0.3s 5;
+}
+@keyframes roll{
+0%{
+    transform: translateX(0)rotate(0);    
+}
+50%{
+    transform: translateX(20px) rotate(90deg);
+}
+100%{
+    transform: translateX(0)rotate(0);
+}
 }
 
+.categoryButton[data-value2="true"] #bowlingIcon{
+    display: inline-block;
+    color: rgba(14, 17, 216, 0.5);
+    animation: roll 1s ease-in-out;
+}
+
+@keyframes fall{
+    0% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+}
+.categoryButton[data-value2="true"] #badminIcon{
+    display: inline-block;
+    color: rgb(247, 8, 8);
+    animation: fall 1s forwards;
+}
+@keyframes appear {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+ .seoul #seoulCity{
+    display: none ;
+  }
+.seoul:hover #seoulCity{
+    display: inline-block;
+    color: rgb(90, 89, 89);
+    animation: appear 1s forwards;
+   
+}
