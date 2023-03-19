@@ -248,7 +248,7 @@ select .gender{
     width: 81px !important;
     background-color: rgba(148, 1, 247, 0.7) !important;
     color: lightcyan !important;
-    font-size: 5px !important;
+    font-size: 10px !important;
    
 }
 .location button :hover{
